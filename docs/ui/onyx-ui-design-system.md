@@ -216,7 +216,8 @@ Purpose: 定義 ONYX COPILOT OS 與 ONYX-OX 的完整 UI 視覺語言、元件�
     "autoHeal": "active",
     "autoOptimize": "idle",
     "autoMaintain": "active",
-    "lastRunAt": "2026-08-06T12:00:00Z"
+    "lastRunAt": "2026-08-06T12:00:00Z",
+    "lastEventSummary": "Auto-heal reconciled two runtime nodes."
   }
 }
 ```
@@ -253,15 +254,19 @@ Purpose: 定義 ONYX COPILOT OS 與 ONYX-OX 的完整 UI 視覺語言、元件�
     "azure": {
       "status": "running",
       "region": "eastasia",
-      "services": 3
+      "services": 3,
+      "version": "2026.08.1",
+      "health": "active"
     },
     "fabric": {
       "status": "idle",
-      "workspaces": 1
+      "workspaces": 1,
+      "version": "2026.08.1"
     },
     "github": {
       "status": "running",
-      "repos": 2
+      "repos": 2,
+      "version": "1.0.0"
     }
   }
 }

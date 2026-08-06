@@ -1,7 +1,8 @@
+import os
 from pathlib import Path
 
 
-REPO_ROOT = Path("/home/runner/work/ONYX-OX/ONYX-OX")
+REPO_ROOT = Path(os.environ.get("GITHUB_WORKSPACE", Path(__file__).resolve().parents[1]))
 
 
 def test_copilot_os_ouids_structure_and_core_content():
@@ -68,7 +69,7 @@ def test_copilot_os_ouids_structure_and_core_content():
     ).read_text()
     assert "NextResponse.json(runtimeFallback)" in runtime_route_content
 
-    docs_content = (REPO_ROOT / "docs/ui/onyx-ui-design-system.md").read_text()
+    docs_content = (REPO_ROOT / "docs/ui/onyx-ui-design-system.md").read_text(encoding="utf-8")
     assert "## 1. 核心理念（Core Principles）" in docs_content
     assert "## 2. 色彩系統（Color System）" in docs_content
     assert "## 9. API Stub 資料結構（/api/ops/*）" in docs_content
