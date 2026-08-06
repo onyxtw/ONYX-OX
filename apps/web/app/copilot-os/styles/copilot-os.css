@@ -1,0 +1,318 @@
+:root {
+  --onyx-crystal-white: #f5f7fa;
+  --onyx-deep-space: #050814;
+  --onyx-aqua-flux: #00ffd4;
+  --onyx-violet-core: #7b61ff;
+  --onyx-sentinel-amber: #ffc857;
+  --onyx-continuity-blue: #3a86ff;
+  --onyx-identity-cyan: #4ecdc4;
+  --onyx-cloud-silver: #e0e4ec;
+  --onyx-error: #ff3366;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: var(--onyx-crystal-white);
+  background:
+    radial-gradient(circle at top left, rgba(0, 255, 212, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(123, 97, 255, 0.3), transparent 32%),
+    linear-gradient(135deg, var(--onyx-deep-space), #151137 58%, #251e52 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(0, 255, 212, 0.05), transparent),
+    radial-gradient(circle, rgba(245, 247, 250, 0.05) 0, transparent 60%);
+  opacity: 0.6;
+}
+
+.ouids-shell {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.ouids-glass-container,
+.glass-container {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(245, 247, 250, 0.16);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ouids-glass-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ouids-glass-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(0, 255, 212, 0.08), transparent 30%),
+    linear-gradient(315deg, rgba(123, 97, 255, 0.12), transparent 35%);
+  pointer-events: none;
+}
+
+.ouids-card,
+.card {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(245, 247, 250, 0.14);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 18px 40px rgba(5, 8, 20, 0.28);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.ouids-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(5, 8, 20, 0.35);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ouids-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.ouids-grid--4 {
+  grid-template-columns: 1fr;
+}
+
+.ouids-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.ouids-section-eyebrow,
+.ouids-kicker {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(245, 247, 250, 0.68);
+}
+
+.ouids-section-header h2,
+.ouids-hero h1 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.ouids-section-header h2 {
+  font-size: 24px;
+}
+
+.ouids-section-header p,
+.ouids-hero-copy,
+.ouids-metric-tile p,
+.ouids-data-row dt,
+.ouids-hero-status span {
+  margin: 0;
+  color: rgba(245, 247, 250, 0.76);
+}
+
+.ouids-hero {
+  display: grid;
+  gap: 24px;
+}
+
+.ouids-hero h1 {
+  font-size: clamp(32px, 6vw, 40px);
+  color: var(--onyx-crystal-white);
+}
+
+.ouids-hero-copy {
+  max-width: 60ch;
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+.ouids-hero-status {
+  display: grid;
+  gap: 16px;
+}
+
+.ouids-hero-status div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ouids-hero-status strong,
+.ouids-metric-tile strong,
+.ouids-data-row dd span {
+  color: var(--onyx-crystal-white);
+}
+
+.ouids-status-badge,
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ouids-status-active,
+.status-active {
+  background: rgba(0, 255, 180, 0.25);
+  border-color: rgba(0, 255, 212, 0.3);
+  color: var(--onyx-aqua-flux);
+  box-shadow: 0 0 18px rgba(0, 255, 212, 0.18);
+}
+
+.ouids-status-idle,
+.status-idle {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(224, 228, 236, 0.3);
+  color: var(--onyx-crystal-white);
+}
+
+.ouids-status-error,
+.status-error {
+  background: rgba(255, 0, 80, 0.25);
+  border-color: rgba(255, 51, 102, 0.32);
+  color: #ffd3e0;
+}
+
+.ouids-status-warning {
+  background: rgba(255, 200, 87, 0.24);
+  border-color: rgba(255, 200, 87, 0.32);
+  color: var(--onyx-sentinel-amber);
+}
+
+.ouids-metric-tile {
+  min-height: 140px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(5, 8, 20, 0.28);
+  border: 1px solid rgba(245, 247, 250, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ouids-metric-meta,
+.ouids-data-row dd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ouids-metric-meta span {
+  color: rgba(245, 247, 250, 0.72);
+}
+
+.ouids-metric-tile strong {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.ouids-data-list {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0 0;
+}
+
+.ouids-data-row {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(5, 8, 20, 0.24);
+  border: 1px solid rgba(245, 247, 250, 0.08);
+}
+
+.ouids-data-row dd {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .ouids-shell {
+    padding: 40px;
+  }
+
+  .ouids-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ouids-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ouids-hero {
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    align-items: end;
+  }
+
+  .ouids-hero-status {
+    justify-items: end;
+  }
+}
+
+@media (min-width: 1100px) {
+  .ouids-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .ouids-glass-container,
+  .glass-container {
+    padding: 20px;
+  }
+
+  .ouids-card,
+  .card {
+    padding: 20px;
+  }
+
+  .ouids-metric-meta,
+  .ouids-data-row dd {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
